@@ -26,6 +26,7 @@ type PageData struct {
 	Orders         []Order
 	Pagination     Pagination
 	Sort           string
+	 SearchQuery    string
 }
 type CustomersPageData struct {
 	Title          string
@@ -195,7 +196,7 @@ func replicateToMaster(query string, database string, user string, password stri
 		return
 	}
 
-	resp, err := http.Post("http://192.168.75.28:8080/replicate", "application/json", bytes.NewBuffer(jsonData))
+	resp, err := http.Post("http://192.168.1.2:8080/replicate", "application/json", bytes.NewBuffer(jsonData))
 	if err != nil {
 		log.Printf("Failed to replicate to master: %v", err)
 		return

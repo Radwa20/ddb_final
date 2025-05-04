@@ -29,7 +29,7 @@ type Snap struct {
 var snaps = []Snap{
 	{
 		Name:     "Snap1",
-		Address:  "192.168.144.1",
+		Address:  "192.168.1.2",
 		Port:     "8081",
 		Username: "hp",
 	},
